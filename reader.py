@@ -31,12 +31,10 @@ from matplotlib.colors import LogNorm
 if __name__ == '__main__':
     # Укажите путь к вашему HDF5 файлу
     file_path = 'data/results.h5'
-    dataset_name = '/nphi-122/coord/R'  # Имя 3D массива внутри файла
-    X = dataset_reader(file_path, '/nphi-122/grid_2d/X')
-    Y = dataset_reader(file_path, '/nphi-122/grid_2d/Y')
+                                   # Имя 2D массива внутри файла
+    X =  dataset_reader(file_path, '/nphi-122/grid_2d/X')
+    Y =  dataset_reader(file_path, '/nphi-122/grid_2d/Y')
     Ea = dataset_reader(file_path, '/nphi-122/field_2d/Ea')
-
-    print("\nПример данных (срез по первой оси [0,:,:]):")
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
     im1 = ax1.pcolormesh(X, Y, Ea[:,:], shading='gouraud', cmap="plasma",)

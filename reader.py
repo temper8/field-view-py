@@ -23,8 +23,7 @@ def dataset_reader(file_path, dataset_name):
         print(f"Ошибка: {str(e)}")
         exit(1)
 
-import matplotlib.pyplot as plt
-from matplotlib.colors import LogNorm
+
 
 if __name__ == '__main__':
     # Укажите путь к вашему HDF5 файлу
@@ -33,6 +32,9 @@ if __name__ == '__main__':
     X =  dataset_reader(file_path, '/nphi-122/grid_2d/X')
     Y =  dataset_reader(file_path, '/nphi-122/grid_2d/Y')
     Ea = dataset_reader(file_path, '/nphi-122/field_2d/Ea')
+
+    import matplotlib.pyplot as plt
+    from matplotlib.colors import LogNorm
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
     im1 = ax1.pcolormesh(X, Y, Ea[:,:], shading='gouraud', cmap="plasma",)

@@ -27,7 +27,7 @@ def dataset_reader(file_path, dataset_name):
 
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
-# Дальнейшая работа с data_array...
+
 if __name__ == '__main__':
     # Укажите путь к вашему HDF5 файлу
     file_path = 'data/results.h5'
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     X = dataset_reader(file_path, '/nphi-122/grid_2d/X')
     Y = dataset_reader(file_path, '/nphi-122/grid_2d/Y')
     Ea = dataset_reader(file_path, '/nphi-122/field_2d/Ea')
-    # Пример использования данных
+
     print("\nПример данных (срез по первой оси [0,:,:]):")
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))

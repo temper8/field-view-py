@@ -23,8 +23,6 @@ def dataset_reader(file_path, dataset_name):
         print(f"Ошибка: {str(e)}")
         exit(1)
 
-
-
 if __name__ == '__main__':
     # Укажите путь к вашему HDF5 файлу
     file_path = 'data/results.h5'
@@ -47,4 +45,3 @@ if __name__ == '__main__':
     ax2.set_title('Ea (LogNorm)')
     fig.savefig('double_disk.png')  
     plt.show()
-    print("\nДанные успешно загружены в переменную 'data_array'")
